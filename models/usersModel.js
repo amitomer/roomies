@@ -16,7 +16,7 @@ let userSchema = new mongoose.Schema({
     email:String,
     smoker:Boolean,
     alcohol:Boolean,
-    pets:Object, //name + num of pets
+    pets:Boolean, //name + num of pets
     proffession:String,
     wantedLocation:String,
     diet:String,
