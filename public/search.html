@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Serach</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+    crossorigin="anonymous">
+  <script src="main.js"></script>
+</head>
+
+<body>
+  <h1>Search</h1>
+  <div id="search">
+    <input type="number" class="maxage" placeholder="Max age" id="maxage-input">
+    <input type="number" class="minage" placeholder="Min age" id="minage-input">
+    <input type="string" class="wantedLocation" placeholder="Wanted Location" id="wantedLocation-input">
+    <input type="number" class="maxrent" placeholder="Max rent" id="maxrent-input">
+    <input type="number" class="maxnumroomates" placeholder="Max number of roomates" id="maxnumroomates-input">
+
+    <div class="check-group">
+      <input class="form-radio" type="checkbox" name="gender" id="gender-checkbox">
+      <label for="gender">Gender</label>
+
+      <input class="form-radio" type="checkbox" name="smoker" id="smoker-checkbox">
+      <label for="smoker">Smoker</label>
+
+      <input class="form-radio" type="checkbox" name="alcohol" id="alcohol-checkbox">
+      <label for="alcohol">Alcohol</label>
+
+      <input class="form-radio" type="checkbox" name="pets" id="pets-checkbox">
+      <label for="pets">Pets</label>
+
+      <input class="form-radio" type="checkbox" name="host" id="host-checkbox">
+      <label for="host">Host</label>
+
+      <input class="form-radio" type="checkbox" name="joinedGrocery" id="joinedGrocery-checkbox">
+      <label for="joinedGrocery">Joined Grocery</label>
+    </div>
+
+    <input list="diets-list" name="diet" placeholder="Diet">
+    <datalist id="diets-list">
+      <option value="Vigan">
+        <option value="Nothing special">
+          <option value="vegetarian">
+    </datalist>
+
+    <input list="religions-list" name="religion" placeholder="Religion">
+    <datalist id="religions-list">
+      <option value="traditional">
+        <option value="religious">
+          <option value="secular">
+    </datalist>
+
+    <input list="hygenicRatings-list" name="hygenicRating" placeholder="Hygenic Rating">
+    <datalist id="hygenicRatings-list">
+      <option value=1>
+        <option value=2>
+          <option value=3>
+    </datalist>
+
+    <input list="quietRatings-list" name="quietRating" placeholder="Quiet Rating">
+    <datalist id="quietRatings-list">
+      <option value=1>
+        <option value=2>
+          <option value=3>
+    </datalist>
+
+    <input list="financesRatings-list" name="financesRating" placeholder="Finances Rating">
+    <datalist id="financesRatings-list">
+      <option value=1>
+        <option value=2>
+          <option value=3>
+    </datalist>
+
+    <button type="button" class="btn btn-secondary">Find Roomies</button>
+  </div>
+  <div class="Results"></div>
+</body>
+
+</html>
