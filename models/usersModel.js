@@ -1,13 +1,14 @@
 var mongoose = require('mongoose');
-
-let matchSchema = new mongoose.Schema({
+var Schema = mongoose.Schema;
+let matchSchema = new Schema({
     date:Date,
-    offeree:[{type: Schema.Types.ObjectId, ref: 'user'}],
-    offerer:[{type: Schema.Types.ObjectId, ref: 'user'}],
+    offeree:{type: Schema.Types.ObjectId, ref: 'user'},
+    offerer:{type: Schema.Types.ObjectId, ref: 'user'},
     status:Boolean
 });
 
-let userSchema = new mongoose.Schema({
+
+let userSchema = new Schema({
     fullName:String,
     password:String,
     age:Number,

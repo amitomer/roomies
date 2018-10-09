@@ -6,10 +6,9 @@ let  usersRepository = new UsersRepository();
 let  usersRenderer = new  UsersRenderer();
 let eventsHandler = new EventsHandler( usersRepository, usersRenderer);
 
-
-// eventsHandler.registerAddPost();
+eventsHandler.OnLoad();
+eventsHandler.filter();
 // eventsHandler.registerRemovePost();
 // eventsHandler.registerToggleComments();
 // eventsHandler.registerAddComment();
 // eventsHandler.registerRemoveComment();
-// eventsHandler.OnLoad()

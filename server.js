@@ -16,37 +16,37 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
  
 // add some dummy data:
-let dummyuser= new User({
-    fullName:"may",  
-    password:"12345M",
-    age:20,
-    gender:"female",
-    phone:"0544726500",
-    email:"mayaronov@gmail.com",
-    smoker:true,
-    alcohol:true,
-    pets:true, //name + num of pets
-    proffession:"student",
-    wantedLocation:"TelAviv",
-    diet:"vegetarian",
-    religion:"secular",
-    hygenicRating: 5,
-    hobbies:["swiming","tennis","piano"],
-    host:true,
-    joinedGrocery:true,
-    quietRating: 5,
-    financesRating: 5,
-    maxrent: 2000,
-    chores:["cooking","laundry"],
-    maxnumroomates:2, //number of roomates, how long 
-    allergies:"none",
-    photo:String,
-    aboutMe:"hi my name is may and i'm a Roomie user", // free text with tips: what kind of roomate are you, what are you looking for in a roomate
-    tvShows:"blah",
-    hangout:"bars,resturant",
-    music:"pop,rock",
-    matches:[]
-});
+// let dummyuser= new User({
+//     fullName:"may",  
+//     password:"12345M",
+//     age:20,
+//     gender:"female",
+//     phone:"0544726500",
+//     email:"mayaronov@gmail.com",
+//     smoker:true,
+//     alcohol:true,
+//     pets:true, //name + num of pets
+//     proffession:"student",
+//     wantedLocation:"TelAviv",
+//     diet:"vegetarian",
+//     religion:"secular",
+//     hygenicRating: 5,
+//     hobbies:["swiming","tennis","piano"],
+//     host:true,
+//     joinedGrocery:true,
+//     quietRating: 5,
+//     financesRating: 5,
+//     maxrent: 2000,
+//     chores:["cooking","laundry"],
+//     maxnumroomates:2, //number of roomates, how long 
+//     allergies:"none",
+//     photo:String,
+//     aboutMe:"hi my name is may and i'm a Roomie user", // free text with tips: what kind of roomate are you, what are you looking for in a roomate
+//     tvShows:"blah",
+//     hangout:"bars,resturant",
+//     music:"pop,rock",
+//     matches:[]
+// });
 
 app.get('/users', function (req, res) {
   User.find({}, function (err,users) {
