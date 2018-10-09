@@ -16,7 +16,7 @@ let userSchema = new mongoose.Schema({
     email:String,
     smoker:Boolean,
     alcohol:Boolean,
-    pets:Object, //name + num of pets
+    pets:Boolean, //name + num of pets
     proffession:String,
     wantedLocation:String,
     diet:String,
@@ -29,13 +29,14 @@ let userSchema = new mongoose.Schema({
     financesRating: Number,
     maxrent: Number,
     chores:Array,
-    maxnumroomates:Object, //number of roomates, how long 
+    maxnumroomates:Number, //number of roomates, how long 
     allergies:String,
     photo:String,
     aboutMe:String, // free text with tips: what kind of roomate are you, what are you looking for in a roomate
     tvShows:String,
     hangout:String,
     music:String,
+    matches:[matchSchema]
 });
 
 let User = mongoose.model('user', userSchema)
