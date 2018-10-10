@@ -3,7 +3,23 @@ class EventsHandler {
         this.usersRepository = usersRepository;
         this.usersRenderer = usersRenderer;
     }
-    
+    checksignin() {
+        $('.signin').on('click', async () => {
+            let $inputfullname = $("#fullName-input");
+            let $inputpassword = $("#password-input");
+            if (($inputfullname.val() === "")||($inputpassword.val() === "")) {
+                alert("Please enter text!");
+            } else {
+                 if (await this.usersRepository.findUser($inputfullname.val(),$inputpassword.val())){
+                    location.href = "search.html";
+                 }
+               else{
+                alert("user or passowrd not correct");
+               }
+            }
+        });
+    }
+ 
     filter() {
         $('.findBtn').on('click', async () => {
             let address = $('.wantedLocation').val()

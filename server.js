@@ -69,6 +69,17 @@ app.post('/users', function (req, res) {
   })
 });
 
+app.get('/users/:password/:fullname', function (req, res) {
+  const password = req.params.password;
+  const fullname = req.params.fullname;
+  User.find({fullName: fullname,password:password} ,function (err,user) {
+    if (err) { res.status(500).send(err) }
+    else { res.status(201).send(user) }
+  })
+});
+
+
+
 
 
 

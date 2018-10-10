@@ -9,7 +9,7 @@ let eventsHandler = new EventsHandler( usersRepository, usersRenderer);
 eventsHandler.OnLoad();
 eventsHandler.filter();
 eventsHandler.registerAddUser();
-// eventsHandler.registerRemovePost();
+eventsHandler.checksignin();
 // eventsHandler.registerToggleComments();
 // eventsHandler.registerAddComment();
 // eventsHandler.registerRemoveComment();
