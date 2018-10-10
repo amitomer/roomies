@@ -2,6 +2,9 @@
 <html>
 
 <head>
+    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> 
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  -->
+  <!-- <link type="text/css" rel="stylesheet" href="materialize-css\dist\css\materialize.min.css" media="screen,projection" /> -->
   <link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
   <title>Serach</title>
@@ -82,51 +85,69 @@
       <div class="results">
 
       </div>
-      <a class="carousel-control-prev prev" href="#carouselExampleControls" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon prev" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
       </a>
-      <a class="carousel-control-next next" href="#carouselExampleControls" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <a class="carousel-control-next " href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon next" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
     </div>
   </div>
 
 
+
   <script id="users-template" type="text/x-handlebars-template">
     {{#each users}}
-    <div class="carousel-item active">
-    <div class="row">
-      <div class="column">
-        <div class="card">
-          <!-- <img src="https://www.w3schools.com/w3images/team1.jpg" alt="Jane" style="width:100%"> -->
-          <div class="container">
-
-                 <div>{{fullName}}</div> 
+       <div  data-id="{{_id}}" class="carousel-item active roomate">
+          <div class="choices">
+              <img class="checkB" src="https://cdn3.iconfinder.com/data/icons/simple-web-navigation/165/tick-512.png" height="38" width="38">
+              <img class="crossB" src="https://cdn3.iconfinder.com/data/icons/simple-web-navigation/165/cross-512.png" height="38" width="38">
+            </div>
+       <div class="row">
+         <div class="column">
+          <div class= " activator card">
+          <span class="activator grey-text text-darken-4"><i class="material-icons right">more_vert</i></span>
+            <img  src="{{photo}}">
+                  <div class="container">
+                     <h2>{{fullName}}</h2>
+                     <p class="title">About Me</p>
+                      <p>{{aboutMe}}</p>
+                      <p>email: {{email}} | phone: {{phone}}</p> -->
+                     <div class="checkboxes">
+                     {{#if pets}}
+                     <img src="images/pet-yes.png">
+                     {{/if}}
+                     {{#if smoker}}
+                     <img src="images/smoker.png">
+                     {{/if}}
+                     {{#if host}}
+                     <img src="images/host-yes.png">
+                     {{/if}}             
+                   </div>
+                  </div>
+                  <div class="card-reveal">
+                      <i class="material-icons right">close</i></span>
+                      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                  </div>
           </div>
         </div>
-      </div>
-      </div>
-     </div>
+       </div>
+        </div>
     {{/each}}
-</script>
-
-  <!-- <div class="choices">
-    <img class="checkB" src="https://cdn3.iconfinder.com/data/icons/simple-web-navigation/165/tick-512.png" height="38" width="38">
-    <img class="crossB" src="https://cdn3.iconfinder.com/data/icons/simple-web-navigation/165/cross-512.png" height="38" width="38">
-  </div> -->
+  </script>
 
 
-  <!-- <script id="users-template" type="text/x-handlebars-template">
-    {{#each users}}
-   <div>{{fullName}}</div> 
-    {{/each}}
-  </script> -->
+  <!-- <p>Hi! I'm {{age}} years old, looking for houses in {{wantedLocation}}. I'm a {{proffession}}, and i like to {{hobbies}}.
+      I love listening to {{music}}. The most I'd spend on rent is ${{maxrent}}</p>
+  
+ 
 
+  
   <script src="jquery/dist/jquery.js"></script>
   <script src="handlebars/dist/handlebars.js"></script>
-  <script type="text/javascript" src="materialize-css\dist\js\materialize.min.js"></script>
+  <!-- <script type="text/javascript" src="materialize-css\dist\js\materialize.min.js"></script> -->
   <script type="text/javascript" src="bootstrap\dist\js\bootstrap.js"></script>
   <script src="main.js" type="module"></script>
 </body>

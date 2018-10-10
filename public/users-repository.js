@@ -11,7 +11,26 @@ class UsersRepository {
     getFromLocalStorage () {
       return JSON.parse(localStorage.getItem(this.STORAGE_ID) || '{}'); 
     }
-
+   
+    findUserIndex(id) {
+        for (let i = 0; i < this.users.length; i += 1) {
+          if (this.users[i].id === id) {
+            return i;
+          }
+        }
+      }
+      RemoveMatchUser(MatchID){
+      
+    }
+    async AddMatch(match,UserId){
+        try {
+            let newmatch = await $.post(`/users/${UserId}/matches`,match)
+            let index= findUserIndex(UserId)
+            this.users[index].matches.push(newmatch);
+        } catch (error) {
+            throw error;
+        }
+    }
     async findUser(fullname, password) {
         try {
             let user= await $.get(`/users/${password}/${fullname}`)
