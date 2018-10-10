@@ -2,13 +2,13 @@
     margin-top: 15%;
     margin-left: 45%;
 }
-html {
+/* html {
     box-sizing: border-box;
   }
   
   *, *:before, *:after {
     box-sizing: inherit;
-  }
+  } */
 .choices{
  
     display: block;
@@ -27,7 +27,7 @@ checkB{
   .row{position: relative;}
  
 .column {
-    position: absolute;
+    position: relative;;
    left:35%;
     width: 33.3%;
     margin-bottom: 16px;
@@ -68,6 +68,11 @@ checkB{
     cursor: pointer;
     width: 100%;
 }
+
+.prev{
+    background-color: black
+}
+.next{background-color: black}
 
 .button:hover {
     background-color: #555;
