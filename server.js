@@ -1,7 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-mongoose.Promise = global.Promise;
+// mongoose.Promise = global.Promise;
 let  User = require('./models/usersModel');
 const SERVER_PORT = 8080;
 
@@ -17,7 +17,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
  
 // add some dummy data:
 // let dummyuser= new User({
-//     fullName:"may",  
+//     fullName:"may Aronov",  
 //     password:"12345M",
 //     age:20,
 //     gender:"female",
@@ -47,6 +47,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 //     music:"pop,rock",
 //     matches:[]
 // });
+// dummyuser.save()
 
 app.get('/users', function (req, res) {
   User.find({}, function (err,users) {

@@ -1,4 +1,4 @@
-checksignin() {
+function checksignin() {
     $('.signin').on('click', () => {
         let $inputfullname = $("#fullName-input");
         let $inputpassword = $("#password-input");

@@ -1,5 +1,5 @@
 {
-  "name": "roomies",
+  "name": "project",
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
@@ -24,6 +24,7 @@
     "fontawesome": "^4.7.2",
     "handlebars": "^4.0.12",
     "jquery": "^3.3.1",
+    "materialize-css": "^1.0.0",
     "mongoose": "^5.3.2",
     "require": "^2.4.20"
   }
