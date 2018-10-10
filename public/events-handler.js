@@ -11,7 +11,9 @@ class EventsHandler {
             let maxage = $(".maxage").val()
             let pets = $('.pets')
             let relevantApts = await this.usersRepository.findRelevantApts(address,  minage,  maxage, pets)
-            this.usersRenderer.renderUsers(relevantApts)
+            this.usersRenderer.renderUsers(relevantApts);
+           
+
         })      
     }
            
@@ -62,9 +64,12 @@ class EventsHandler {
         let hangout = signUp2.find(".hang").val();
         let music = signUp2.find(".music").val();
     
-      await  this.usersRepository.addUser(name, password, age, gender, phone, email, smoker, alcohol, pets, proffession, wantedLocation, diet, religion, hygenicRating, hobbies, host, joinedGrocery, quietRating, financesRating, maxrent, chores, maxnumroomates, allergies, photo, aboutMe, tvShows, hangout, music)
+        await  this.usersRepository.addUser(name, password, age, gender, phone, email, smoker, alcohol, pets, proffession, wantedLocation, diet, religion, hygenicRating, hobbies, host, joinedGrocery, quietRating, financesRating, maxrent, chores, maxnumroomates, allergies, photo, aboutMe, tvShows, hangout, music)
         
-    });
-}
+        });
+    }
+
+    
+
 }
 export default EventsHandler
