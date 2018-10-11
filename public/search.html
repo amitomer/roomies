@@ -7,7 +7,7 @@
   <!-- <link type="text/css" rel="stylesheet" href="materialize-css\dist\css\materialize.min.css" media="screen,projection" /> -->
   <link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet">
   <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-  <title>Serach</title>
+  <title>Search</title>
 </head>
 
 <body>
@@ -19,41 +19,45 @@
     <input type="number" class="maxrent" placeholder="Max rent" id="maxrent-input">
     <input type="number" class="maxnumroomates" placeholder="Max number of roomates" id="maxnumroomates-input">
 
-    <div class="check-group">
-      <input class="form-radio" type="checkbox" name="gender" id="gender-checkbox">
-      <label for="gender">Gender</label>
+    
+<!-- 
+      <input list="gender-list" class="gender" placeholder="gender">
+    <datalist id="gender-list">
+      <option value="Female">
+        <option value="Male">
+    </datalist> -->
 
-      <input class="form-radio" type="checkbox" name="smoker" id="smoker-checkbox">
+      <!-- <input class="form-radio" type="checkbox" name="smoker" id="smoker-checkbox">
       <label for="smoker">Smoker</label>
 
       <input class="form-radio" type="checkbox" name="alcohol" id="alcohol-checkbox">
-      <label for="alcohol">Alcohol</label>
+      <label for="alcohol">Alcohol</label> -->
 
       <input class="form-radio pets" type="checkbox" name="pets" id="pets-checkbox">
       <label for="pets">Pets</label>
 
-      <input class="form-radio" type="checkbox" name="host" id="host-checkbox">
+      <!-- <input class="form-radio" type="checkbox" name="host" id="host-checkbox">
       <label for="host">Host</label>
 
       <input class="form-radio" type="checkbox" name="joinedGrocery" id="joinedGrocery-checkbox">
       <label for="joinedGrocery">Joined Grocery</label>
-    </div>
+    </div> -->
 
-    <input list="diets-list" name="diet" placeholder="Diet">
+    <!-- <input list="diets-list" name="diet" placeholder="Diet">
     <datalist id="diets-list">
-      <option value="Vigan">
+      <option value="Vegan">
         <option value="Nothing special">
           <option value="vegetarian">
     </datalist>
 
-    <input list="religions-list" name="religion" placeholder="Religion">
+    <input list="religions-list" class="religion" placeholder="Religion">
     <datalist id="religions-list">
       <option value="traditional">
         <option value="religious">
           <option value="secular">
-    </datalist>
+    </datalist> -->
 
-    <input list="hygenicRatings-list" name="hygenicRating" placeholder="Hygenic Rating">
+    <!-- <input list="hygenicRatings-list" name="hygenicRating" placeholder="Hygenic Rating">
     <datalist id="hygenicRatings-list">
       <option value=1>
         <option value=2>
@@ -72,7 +76,7 @@
       <option value=1>
         <option value=2>
           <option value=3>
-    </datalist>
+    </datalist> -->
 
     <button type="button" class="btn btn-secondary findBtn ">Find Roomies</button>
   </div>
@@ -118,7 +122,8 @@
                   <div class="container">
                      <h2>{{fullName}}</h2>
                      <p class="title">About Me</p>
-                      <p>{{aboutMe}}</p>
+                      <p>Hi! I'm {{age}} years old, looking for houses in {{wantedLocation}}. I'm a {{proffession}}, and i like to {{hobbies}}.
+                          I love listening to {{music}}. The most I'd spend on rent is ${{maxrent}}. Some more info about me- {{aboutMe}}</p>
                       <p>email: {{email}} | phone: {{phone}}</p> -->
                      <div class="checkboxes">
                      {{#if pets}}
@@ -132,11 +137,10 @@
                      {{/if}}             
                    </div>
                   </div>
-                  <div class="card-reveal">
+                  <!-- <div class="card-reveal">
                       <i class="material-icons right">close</i></span>
-                      <p>Hi! I'm {{age}} years old, looking for houses in {{wantedLocation}}. I'm a {{proffession}}, and i like to {{hobbies}}.
-                          I love listening to {{music}}. The most I'd spend on rent is ${{maxrent}}</p> 
-                  </div>
+                       
+                  </div> -->
           </div>
         </div>
        </div>
