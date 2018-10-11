@@ -3,23 +3,30 @@ class EventsHandler {
         this.usersRepository = usersRepository;
         this.usersRenderer = usersRenderer;
     }
-
+    getmatches() {
+        $('.NavMatches').on('click', async () => {
+            let UserData = this.usersRepository.getFromLocalStorage();
+            let UserId = UserData[0]._id;
+            let matches = await this.usersRepository.GetMatch(UserId);
+            this.usersRenderer.renderMatches(matches);
+        })
+    }
 
     LikeUser() {
-        $('.results').on('click', '.checkB', async (event) => {
-            let MatchID = $(event.currentTarget).closest('roomate').data().id;
+        $('.checkB').on('click', async (event) => {
+            let MatchID = $(event.currentTarget).closest('#container').find('.roomate').data().id;
             let UserData = this.usersRepository.getFromLocalStorage();
-            let UserId = UserData._id;
-            let match= {     
-            offeree:UserId,
-            offerer:MatchID,
-            status:null  
+            let UserId = UserData[0]._id;
+            let match = {
+                offeree: UserId,
+                offerer: MatchID,
+                status: null
             }
-            await this.usersRepository.AddMatch(match,UserId);
-                this.usersRepository.RemoveMatchUser(MatchID);
-            this.usersRenderer.renderUsers(this.usersRepository.users);
+            await this.usersRepository.AddMatch(match, UserId);
+            let newusers = this.usersRepository.RemoveMatchUser(MatchID);
+            this.usersRenderer.renderUsers(newusers);
         })
-     }
+    }
 
     checksignin() {
         $('.signin').on('click', async () => {
@@ -49,14 +56,17 @@ class EventsHandler {
         })
     }
 
-    OnLoad() {
-        this.usersRepository.getUsers()
-        then(() => {
+    async  OnLoad() {
+        try {
+            await this.usersRepository.getUsers()
+
             this.usersRenderer.renderUsers(this.usersRepository.users)
-        })
-            .catch(function (error) {
-                throw error;
-            })
+        }
+        catch (error) {
+            throw error;
+
+
+        }
     }
     registerAddUser() {
         $(".move-to-signup2").on('click', async () => {

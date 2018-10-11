@@ -81,15 +81,22 @@ app.get('/users/:password/:fullname', function (req, res) {
 app.post('/users/:UserId/matches', function (req, res) {
   const userId = req.params.UserId;
   const newmatch= req.body;
+  console.log(newmatch)
   User.findByIdAndUpdate( userId, { $push: {matches: newmatch}}, { "new": true }, function (err,user) {
     if (err) { res.status(500).send(err) }
     else { res.status(201).send(user.matches[user.matches.length - 1]) }
   })
 });
 
-
-
-
+app.get(`/users/:UserId/matches`, function (req, res) {
+  const  userId = req.params.UserId;
+  User.findById(userId,{matches:true}).populate('offeree offerer').exec(function(err,user){
+    if (err) { res.status(500).send(err) }
+    else { 
+      res.send(user)
+     }
+  })
+});
 
 
 

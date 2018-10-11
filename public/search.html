@@ -79,32 +79,37 @@
 
 
   <h2>My Matches</h2>
-
+  <div id="container">
+  <button type="button" class="checkB" ><img src="https://cdn3.iconfinder.com/data/icons/simple-web-navigation/165/tick-512.png" height="38" width="38"></button> 
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
       <div class="results">
-
       </div>
+
       <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon prev" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
       </a>
+
       <a class="carousel-control-next " href="#carouselExampleControls" role="button" data-slide="next">
         <span class="carousel-control-next-icon next" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
     </div>
   </div>
+</div>
 
 
 
   <script id="users-template" type="text/x-handlebars-template">
     {{#each users}}
        <div  data-id="{{_id}}" class="carousel-item active roomate">
-          <div class="choices">
-              <img class="checkB" src="https://cdn3.iconfinder.com/data/icons/simple-web-navigation/165/tick-512.png" height="38" width="38">
-              <img class="crossB" src="https://cdn3.iconfinder.com/data/icons/simple-web-navigation/165/cross-512.png" height="38" width="38">
+         <form>
+        <div class="choices">
+             <!-- <button type="button" class="checkB" ><img src="https://cdn3.iconfinder.com/data/icons/simple-web-navigation/165/tick-512.png" height="38" width="38"></button>  -->
+              <!-- <img class="crossB" src="https://cdn3.iconfinder.com/data/icons/simple-web-navigation/165/cross-512.png" height="38" width="38"> -->
             </div>
+          </form> 
        <div class="row">
          <div class="column">
           <div class= " activator card">
@@ -129,7 +134,8 @@
                   </div>
                   <div class="card-reveal">
                       <i class="material-icons right">close</i></span>
-                      <p>Here is some more information about this product that is only revealed once clicked on.</p>
+                      <p>Hi! I'm {{age}} years old, looking for houses in {{wantedLocation}}. I'm a {{proffession}}, and i like to {{hobbies}}.
+                          I love listening to {{music}}. The most I'd spend on rent is ${{maxrent}}</p> 
                   </div>
           </div>
         </div>
@@ -139,15 +145,12 @@
   </script>
 
 
-  <!-- <p>Hi! I'm {{age}} years old, looking for houses in {{wantedLocation}}. I'm a {{proffession}}, and i like to {{hobbies}}.
-      I love listening to {{music}}. The most I'd spend on rent is ${{maxrent}}</p>
   
- 
 
   
   <script src="jquery/dist/jquery.js"></script>
   <script src="handlebars/dist/handlebars.js"></script>
-  <!-- <script type="text/javascript" src="materialize-css\dist\js\materialize.min.js"></script> -->
+ <!-- <script type="text/javascript" src="materialize-css\dist\js\materialize.min.js"></script>  -->
   <script type="text/javascript" src="bootstrap\dist\js\bootstrap.js"></script>
   <script src="main.js" type="module"></script>
 </body>

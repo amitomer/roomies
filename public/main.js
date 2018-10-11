@@ -10,6 +10,5 @@ eventsHandler.OnLoad();
 eventsHandler.filter();
 eventsHandler.registerAddUser();
 eventsHandler.checksignin();
-// eventsHandler.registerToggleComments();
-// eventsHandler.registerAddComment();
-// eventsHandler.registerRemoveComment();
+eventsHandler.LikeUser();
+eventsHandler.getmatches()

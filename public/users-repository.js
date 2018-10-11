@@ -1,31 +1,45 @@
 class UsersRepository {
     constructor() {
         this.users = [];
-        this.STORAGE_ID ='Roomies'
+        this.STORAGE_ID = 'Roomies'
     }
 
-    saveToLocalStorage (user) {
+    saveToLocalStorage(user) {
         localStorage.setItem(this.STORAGE_ID, JSON.stringify(user));
-      }
-
-    getFromLocalStorage () {
-      return JSON.parse(localStorage.getItem(this.STORAGE_ID) || '{}'); 
     }
-   
+
+    getFromLocalStorage() {
+        return JSON.parse(localStorage.getItem(this.STORAGE_ID) || '{}');
+    }
+
     findUserIndex(id) {
         for (let i = 0; i < this.users.length; i += 1) {
-          if (this.users[i].id === id) {
-            return i;
-          }
+            if (this.users[i]._id === id) {
+                return i;
+            }
         }
-      }
-      RemoveMatchUser(MatchID){
-      
     }
-    async AddMatch(match,UserId){
+    RemoveMatchUser(UserID) {
+        let NewUsers = this.users;
+        let index = findUserIndex(UserID);
+        NewUsers.splice(index, 1);
+        return NewUsers;
+    }
+
+    async GetMatch(UserId) {
         try {
-            let newmatch = await $.post(`/users/${UserId}/matches`,match)
-            let index= findUserIndex(UserId)
+            let user = await $.get(`/users/${UserId}/matches`);
+            return  user.matches;
+        }
+        catch (error) {
+            throw error;
+        }
+    }
+
+    async AddMatch(match, UserId) {
+        try {
+            let newmatch = await $.post(`/users/${UserId}/matches`, match)
+            let index = findUserIndex(UserId)
             this.users[index].matches.push(newmatch);
         } catch (error) {
             throw error;
@@ -33,12 +47,12 @@ class UsersRepository {
     }
     async findUser(fullname, password) {
         try {
-            let user= await $.get(`/users/${password}/${fullname}`)
+            let user = await $.get(`/users/${password}/${fullname}`)
             this.saveToLocalStorage(user);
             return true;
         }
         catch (error) {
-            console.log (error);
+            console.log(error);
             return false;
         }
     }

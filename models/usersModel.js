@@ -23,7 +23,7 @@ let userSchema = new Schema({
     diet:String,
     religion:String,
     hygenicRating: Number,
-    hobbies:Array,
+    hobbies: String,
     host:Boolean,
     joinedGrocery:Boolean,
     quietRating: Number,

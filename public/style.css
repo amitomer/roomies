@@ -77,3 +77,15 @@ checkB{
 .button:hover {
     background-color: #555;
 }
+
+.checkB{
+    position: absolute;
+   right: 150px;
+ }
+ .crossB{
+   position: absolute;
+   right:100px;
+ }
+ .card{
+     position: relative;
+ }
