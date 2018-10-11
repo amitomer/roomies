@@ -39,6 +39,7 @@ class EventsHandler {
         })
     }
 
+
     checksignin() {
         $('.signin').on('click', async () => {
             let $inputfullname = $("#fullName-input");
@@ -84,22 +85,13 @@ class EventsHandler {
         }
     }
     registerAddUser() {
-        // $(".move-to-signup2").on('click', async (event) => {
-        //     var signUp = $(event.currentTarget).closest(".sign-up");
-        //     var name = signUp.find(".name").val();
-        //     var password = signUp.find(".pass").val();
-        //     var verify = signUp.find(".verify-pass").val();
-        //     var email = signUp.find(".email").val();
-        // });
-
+        
         $(".add-user").on('click', async (event) => {
-
             let signUp2 = $(event.currentTarget).closest(".sign-up2");
             var name = signUp2.find(".name").val();
             var password = signUp2.find(".pass").val();
             var verify = signUp2.find(".verify-pass").val();
             var email = signUp2.find(".email").val();
-
             let age = signUp2.find(".age").val();
             let gender = signUp2.find(".gender").val();
             let phone = signUp2.find(".phone").val();
