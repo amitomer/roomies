@@ -1,91 +1,378 @@
-.homepagecenter{
-    margin-top: 15%;
-    margin-left: 45%;
-}
-/* html {
-    box-sizing: border-box;
+body{
+    background-image: url("http://www.aljanh.net/data/archive/img/540921798.jpeg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    max-width:100%;
+    height:auto;
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: "Roboto", sans-serif;
+    font-weight: normal;  
   }
-  
-  *, *:before, *:after {
-    box-sizing: inherit;
-  } */
-.choices{
- 
+  .accountimage{
+margin: 0 auto;
+margin-top: 5%
+  }
+  #loginform{
+    margin: 0 auto;
+      position: absolute;
+      left: 17%;
+      top:30%
+  }
+  button.signin{
+      margin-left: 10%
+  }
+html{
+    font-family: "Roboto", sans-serif;
+    font-weight: normal;
+}
+.loginform{
+    position: absolute;
+    top: 30%;
+}
+.nav{
+     z-index: 10; 
+     position: fixed; 
+    box-shadow: none;
+    background-color: transparent;
+    transition: box-shadow .3s, background-color .3s;
+}
+.nav ul li {
+    transition: background-color .3s;
+    float: left;
+    padding: 0;
+}
+.nav ul a {
+    padding-left: 0;
+    padding-right: 0;
+    margin: 0 10px;
+    position: relative;
+    font-weight: 300;
+    transition: color .2s;
+    color: #444
+}
+.homepagecenter{
+  height: 18%;
+  max-width:50%;  
+   margin-top: 18%;
+   margin-left: 37%;
+   padding: 2px;
+}
+.sign-btn{
+    margin: 5px;
+    width: auto
+}
+
+#mainNav{
+    max-width:90%;
+    height: 10%;
+    /* font-weight: 625;
+    font-size: 20px; */
     display: block;
 }
-checkB{
-    margin: auto;
-    position: absolute;
-    bottom:-20%;
-    left: 60%;
- }
- .crossB{
-   position: absolute;
-   bottom:-20%;
-   left: 45%;
- }
-  .row{position: relative;}
- 
-.column {
-    position: relative;;
-   left:35%;
-    width: 33.3%;
-    margin-bottom: 16px;
-    padding: 0 8px;
+
+.match{
+    width: 60%;
 }
 
-/* Display the columns below each other instead of side by side on small screens */
-@media screen and (max-width: 650px) {
-    .column {
-        width: 100%;
-        display: block;
+.nav-container{
+    position: absolute;
+    max-width: 100%; 
+    height: 15%;
+    top: 0
+}
+.serch-option-container{
+    position: absolute;
+    max-width: 80%; 
+    height: 15%;
+    top: 20%;
+}
+.serch-result-container{
+    position: absolute;
+    max-width: 40%;
+    height: 30%;
+    top:35%;
+    left: 30%;
+}
+.matchesRes{
+    position: absolute;
+    left:15%;
+    top:20%;
+    width: 70%;
+    height: auto;
+}
+.match{
+    width: 95%;
+    height: 15%;
+    
+}
+
+.sidenav-trigger-container{
+    position: absolute;
+   top: 10%
+}
+.roomiecard{
+width: 80%
+}
+.arrow-container{
+    width:20% ;
+}
+.arrow{
+  margin-top: 10%;
+}
+/* 
+.input-field label {
+    color: #000;
+  }
+  .input-field input[type=text]:focus + label {
+    color: #000;
+  }
+  .input-field input[type=email]:focus {
+    border-bottom: 1px solid yellow;
+    box-shadow: 0 1px 0 0 yellow
+  } */
+.board{
+width: 75%;
+margin: 0 auto;
+height: 80%;
+}
+.board-inner{
+    width: 100%;
+    height: 15% 
+}
+.tab-content{
+    width: 100%;
+    height: 85%
+}
+.tab-pane{
+    position: relative;
+ }
+.board .nav-tabs {
+    position: relative;
+    margin: 40px auto;
+    margin-bottom: 0;
+    box-sizing: border-box;
+    border-bottom-color: #e0e0e0;
+}
+.nav-tabs .nav-link {
+    border: none;
+}
+
+.board > div.board-inner{
+    /* background-size: 30%; */
+    position: relative;
+}
+
+p.narrow{
+    width: 60%;
+    margin: 10px auto;
+}
+
+.liner{
+    height: 2px;
+    background:  #e0e0e0;;
+    position: absolute;
+    width: 80%;
+    margin: 0 auto;
+    left: -4%;
+    right: 0;
+    top: 50%;
+    z-index: 1;
+}
+
+.board .nav-tabs > a.active > a, .board .nav-tabs > a.active > a:hover, .board  .nav-tabs > a.active > a:focus {
+    color: #555555;
+    cursor: default;
+    border: 0;
+    border-bottom-color: transparent;
+}
+
+p.round-tabs{
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    display: inline-block;
+    border-radius: 100px;
+    background: #fff;
+    border: 2px solid #e0e0e0;
+    z-index: 2;
+    position: absolute;
+    left: 0;
+    text-align: center;
+    font-size: 25px;
+}
+
+p.round-tabs span{
+    color:#555555;
+}
+/* .board  li.active  p.round-tabs {
+    background: #fff ;
+    border: 2px solid #5bc0de ; 
+} */
+.board  a.active  p.round-tabs {
+    background: #fff ;
+    border: 2px solid #5bc0de ; 
+}
+.board a.active p.round-tabs span{
+    color: #5bc0de ;
+}
+.board .nav>li {
+    position: relative;
+    display: block;
+
+}
+.maxage{
+width: 10%;
+}
+p.round-tabs:hover {
+    color: #333;
+    border: 2px solid rgb(24, 22, 22);
+}
+.input-field label {
+    color:rgb(66, 66, 66);
+    font-size: 15px;
+    font-weight: 700
+  }
+  .input-field input[type=number] {
+    border-bottom: 1px solid rgb(66, 66, 66);
+    box-shadow: 0 1px 0 0 rgb(66, 66, 66);
+  }
+  .input-field input[type=text] {
+    border-bottom: 1px solid rgb(66, 66, 66);
+    box-shadow: 0 1px 0 0 rgb(66, 66, 66);
+  }
+  .input-field input[type="email"] {
+    border-bottom: 1px solid rgb(66, 66, 66);
+    box-shadow: 0 1px 0 0 rgb(66, 66, 66);
+  }
+  .input-field input[type="password"] {
+    border-bottom: 1px solid rgb(66, 66, 66);
+    box-shadow: 0 1px 0 0 rgb(66, 66, 66);
+  }
+  .input-field input[type="radio"] {
+    border-bottom: 1px solid rgb(66, 66, 66);
+    box-shadow: 0 1px 0 0 rgb(66, 66, 66);
+  }
+  .input-field input[type="range"] {
+    border-bottom: 1px solid rgb(66, 66, 66);
+    box-shadow: 0 1px 0 0 rgb(66, 66, 66);
+  }
+  .input-field input[type="checkbox"] {
+    border-bottom: 1px solid rgb(66, 66, 66);
+    box-shadow: 0 1px 0 0 rgb(66, 66, 66);
+  }
+  .input-field input[type="url"] {
+    border-bottom: 1px solid rgb(66, 66, 66);
+    box-shadow: 0 1px 0 0 rgb(66, 66, 66);
+  }
+  .input-field  textarea{
+    border-bottom: 1px solid rgb(66, 66, 66);
+    box-shadow: 0 1px 0 0 rgb(66, 66, 66);  
+  }
+  .tab-pane label {
+      color: rgb(66, 66, 66);
+      font-size: 15px;
+      font-weight: 700
+  }
+ .nav-tabs > li {
+    width: 16%;   
+} 
+
+.board a:after {
+    content: " ";
+    position: absolute;
+    left: 21%;
+   opacity:0;
+    margin: 0 auto;
+    bottom: 0px;
+    border: 5px solid transparent;
+    border-bottom-color: #5bc0de;
+    transition:0.1s ease-in-out;
+    
+}
+.board a.active:after {
+    content: " ";
+    position: absolute;
+    left: 21%;
+    opacity:1;
+    margin: 0 auto;
+    bottom: 0px;
+    border: 10px solid transparent;
+    border-bottom-color: #5bc0de;  
+}
+.nav-tabs .nav-link.active {
+    background-color:transparent;
+}
+
+
+.board .nav-tabs > li a{
+   width: 70px;
+   height: 70px;
+   margin: 20px auto;
+   border-radius: 100%;
+   padding: 0;
+}
+
+.nav-tabs > li a:hover{
+    background: transparent;
+}
+
+
+
+/* .tab-content .head{
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 25px;
+    text-transform: uppercase;
+    padding-bottom: 10px;
+}
+.btn-outline-rounded{
+    padding: 10px 40px;
+    margin: 20px 0;
+    border: 2px solid transparent;
+    border-radius: 25px;
+}
+
+.btn.green{
+    background-color:#5cb85c;
+    /* border: 2px solid #5cb85c; */
+    /* color: #ffffff; */
+/* } */ 
+
+
+
+@media( max-width : 585px ){
+    
+    .board {
+width: 90%;
+height:auto !important;
+}
+    span.round-tabs {
+        font-size:16px;
+width: 50px;
+height: 50px;
+line-height: 50px;
+    }
+    .tab-content .head{
+        font-size:20px;
+        }
+    .nav-tabs > li a {
+width: 50px;
+height: 50px;
+line-height:50px;
+}
+
+.nav-tabs > li.active:after {
+content: " ";
+position: absolute;
+left: 25%;
+opacity:1;
+margin: 0 auto;
+bottom: 0px;
+border: 10px solid transparent;
+border-bottom-color: aquamarine;
+}
+
+.btn-outline-rounded {
+    padding:12px 20px;
     }
 }
-
-/* Add some shadows to create a card effect */
-.card {
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2)
-}
-
-/* Some left and right padding inside the container */
-.container {
-    padding: 0 16px;
-}
-
-
-.title {
-    color: grey;
-}
-
-.button {
-    border: none;
-    outline: 0;
-    display: inline-block;
-    padding: 8px;
-    color: white;
-    background-color: #000;
-    text-align: center;
-    cursor: pointer;
-    width: 100%;
-}
-
-.prev{
-    background-color: black
-}
-.next{background-color: black}
-
-.button:hover {
-    background-color: #555;
-}
-
-.checkB{
-    position: absolute;
-   right: 150px;
- }
- .crossB{
-   position: absolute;
-   right:100px;
- }
- .card{
-     position: relative;
- }

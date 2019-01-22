@@ -2,30 +2,68 @@
 <html>
 
 <head>
-        <meta charset="utf-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Sign in</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet">
-        <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-       
-    </head>
-    
-    <body>
-        <h1>Sign in</h1>
-        <div id="search">
-            <input type="string" class="fullName" placeholder="Full name" id="fullName-input">
-            <input type="password" class="password" placeholder="Password" id="password-input">
-        </br>
-    </br>
-    <button type="button" class="signin btn btn-secondary">Let's find the best roomate!</button>
-</div>
-<script src="jquery/dist/jquery.js"></script>
-<script src="handlebars/dist/handlebars.js"></script>
-<script type="text/javascript" src="materialize-css\dist\js\materialize.min.js"></script>
-<script type="text/javascript" src="bootstrap\dist\js\bootstrap.js"></script>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Sign in</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="@fortawesome/fontawesome-free/css/all.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="materialize-css\dist\css\materialize.min.css" media="screen,projection" />
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
 
-<script src="main.js" type="module"></script>
+</head>
+
+<body>
+    <div class="containerr">
+        <div class="nav-container"></div>
+        <div class="row">
+            <div class=" accountimage">
+                <i class="material-icons large">account_circle</i>
+            </div>
+            <form action="" class="loginform col s12" id="loginform">
+                <div class="container" id="search">
+                    <div class="row">
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons  prefix">account_circle</i>
+                            <input type="text" class="fullName" id="fullName-input" name="uname" style="width: 40%;" required>
+                            <label for="fullName-input">Username</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <i class="material-icons prefix">lock</i>
+                            <input  type="password" class="password" id="password-input" style="width: 40%;" required>
+                            <label for="password">Password</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col s12">
+                            <button type="button" class="signin btn btn-secondary">Let's find the best roomate!</button>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    <script src="jquery/dist/jquery.js"></script>
+    <script src="handlebars/dist/handlebars.js"></script>
+    <script type="text/javascript" src="materialize-css\dist\js\materialize.min.js"></script>
+    <script type="text/javascript" src="bootstrap\dist\js\bootstrap.js"></script>
+
+    <script src="main.js" type="module"></script>
 </body>
 
 </html>

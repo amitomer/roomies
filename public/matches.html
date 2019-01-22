@@ -4,33 +4,78 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link type="text/css" rel="stylesheet" href="materialize-css\dist\css\materialize.min.css" media="screen,projection" />
-    <link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+
+    <!-- <script>
+     $(document).ready(function(){
+    $('.sidenav').sidenav();
+  });   
+        </script> -->
 </head>
 
+
 <body>
-    <h2>Matches</h2>
-
-
-    <div class="matchescontainer">
-            <div class="matchesRes">  </div>
+    <div class="matches-main-container">
+        <div class="nav-container"></div>
+        <div class="sidenav-trigger-container">
+            <a href="#" data-target="slide-out" class="sidenav-trigger">
+                <i class="material-icons">menu</i>
+            </a>
+        </div>
+        <div class="matchesRes"> you dont have any</div>
+        <ul id="slide-out" class="sidenav">
+            <li>
+                <div class="user-view">
+                    <div class="background">
+                        <img style="width:100%;height:100%" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTxXCLm9_xkq_15bbJgJvV5YcN3hAYjPLPv3j72EmsYD_ni9FbC">
+                    </div>
+                    <a href="">
+                        <img class="circle" src="https://materializecss.com/images/yuna.jpg">
+                    </a>
+                    <a href="">
+                        <span class="white-text name">John Doe</span>
+                    </a>
+                    <a href="">
+                        <span class="white-text email">jdandturk@gmail.com</span>
+                    </a>
+                </div>
+            </li>
+            <li>
+                <a class="sidenav-close roomies-match" href="#">
+                    <i class="material-icons">cloud</i>Roomies</a>
+            </li>
+            <li>
+                <a class="sidenav-close requests-match" href="#">requests</a>
+            </li>
+            <li>
+                <div class="divider"></div>
+            </li>
+            <li>
+                <a class="waves-effect sidenav-close offers-match" href="#">offers</a>
+            </li>
+        </ul>
+            
     </div>
 
-    <script id="matches-template" type="text/x-handlebars-template">
+
+
+    <script id="offers-template" type="text/x-handlebars-template">
             {{#each matches}}
-              {{#each  offerer}}
-               <div class="row  valign-wrapper">
+              {{#offerer}}
+               <div class="row match valign-wrapper">
                     <div class="col s12 m9 l8">
-                        <div class="card grey lighten-5 hoverable match" data-id="{{_id}}: {{this}}">
+                        <div class="card grey lighten-5 hoverable match" data-id="{{_id}}">
                             <div class="row  valign-wrapper">
-                                <div class="card-image col s1 m1 l2">
-                                    <i class="medium material-icons">account_circle</i>
+                                <div class="card-image col s1 m1 l2">  
+                                    <img src="{{photo}}" alt="" class="circle" onerror="this.style.display='none'" style="width:20%">                                                         
                                 </div>
                                 <div class="card-content col s11 m11 l10">
-                                    <span class=" activator grey-text text-darken-4"> {{ fullName}}: {{this}} want to Roomie with u
+                                    <span class=" activator grey-text text-darken-4"> {{fullName}} want to Roomie with u
                                         <i class="material-icons right">more_vert</i>
                                     </span>
                                     <img class="checkB" src="https://cdn3.iconfinder.com/data/icons/simple-web-navigation/165/tick-512.png" height="38" width="38">
@@ -46,13 +91,73 @@
                         </div>
                     </div>
                 </div>       
-               {{/each}}
+               {{/offerer}}
             {{/each}}
     </script>
-    <script type="text/javascript" src="materialize-css\dist\js\materialize.min.js"></script> 
-    <script src="jquery/dist/jquery.js"></script>
-    <script src="handlebars/dist/handlebars.js"></script>
+
+
+
+    <script id="roomies-template" type="text/x-handlebars-template">
+        {{#each matches}}
+           <div class="row  valign-wrapper">
+                <div class="col s12 m9 l8">
+                    <div class="card grey lighten-5 hoverable match" data-id="{{_id}}">
+                        <div class="row  valign-wrapper">
+                            <div class="card-image col s1 m1 l2">
+                                <img src="{{photo}}" alt="Avatar" class="circle" style="width:20%">                                                         
+                            </div>
+                            <div class="card-content col s11 m11 l10">
+                                <span class=" activator grey-text text-darken-4"> {{fullName}} is your Roomie!
+                                    <i class="material-icons right">more_vert</i>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="card-reveal">
+                            <span class="card-title grey-text text-darken-4">Roomie detailes
+                                <i class="material-icons right">close</i>
+                            </span>
+                            <p>Here is some more information about the roomie!!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>       
+        {{/each}}
+</script>
+
+    <script id="request-template" type="text/x-handlebars-template">
+    {{#each matches}}
+      {{#offeree}}
+       <div class="row  valign-wrapper">
+            <div class="col s12 m9 l8">
+                <div class="card grey lighten-5 hoverable match" data-id="{{_id}}">
+                    <div class="row  valign-wrapper">
+                        <div class="card-image col s1 m1 l2">
+                            <img src="{{photo}}" alt="Avatar" class="circle" style="width:20%">                                                         
+                        </div>
+                        <div class="card-content col s11 m11 l10">
+                            <span class=" activator grey-text text-darken-4"> your Roomie request to {{fullName}} is still pending
+                                <i class="material-icons right">more_vert</i>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4">Roomie detailes
+                            <i class="material-icons right">close</i>
+                        </span>
+                        <p>Here is some more information about the roomie!!</p>
+                    </div>
+                </div>
+            </div>
+        </div>       
+       {{/offeree}}
+    {{/each}}
+</script>
+
+
+    <script type="text/javascript" src="jquery/dist/jquery.js"></script>
+    <script type="text/javascript" src="materialize-css/dist/js/materialize.min.js"></script>
     <script type="text/javascript" src="bootstrap\dist\js\bootstrap.js"></script>
+    <script type="text/javascript" src="handlebars/dist/handlebars.js"></script>
     <script src="main.js" type="module"></script>
 </body>
 

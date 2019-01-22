@@ -4,7 +4,8 @@ let matchSchema = new Schema({
     // date:Date,
     offeree:{type: Schema.Types.ObjectId, ref: 'user'},
     offerer:{type: Schema.Types.ObjectId, ref: 'user'},
-    status:Boolean
+    status:{ type: Boolean, default: null },
+    _id: false
 });
 
 
@@ -31,6 +32,7 @@ let userSchema = new Schema({
     maxrent: Number,
     chores:Array,
     maxnumroomates:Number, //number of roomates, how long 
+    roomatetime:Number,
     allergies:String,
     photo:String,
     aboutMe:String, // free text with tips: what kind of roomate are you, what are you looking for in a roomate
@@ -43,3 +45,6 @@ let userSchema = new Schema({
 let User = mongoose.model('user', userSchema)
 
 module.exports = User;
+
+
+
