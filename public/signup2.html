@@ -2,73 +2,335 @@
 <html>
 
 <head>
-    <link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Niramit" rel="stylesheet">
-    <link href="style.css" rel="stylesheet">
     <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="materialize-css\dist\css\materialize.min.css" media="screen,projection" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
 </head>
+
 <body>
-<form class="sign-up-2">
-  <div class="sign-up2">
-      <h1>Set up your User!</h1>
-      <p>Full Name: </p><input class="name" type="text" placeholder="Name..">
-      <p>Password: </p><input class="pass" type="text" placeholder="Password..">
-      <p>Verify Password: </p><input class="verify-pass" type="text" >
-      <p>Email: </p><input class="email" type="text" >
-      
-    <h1>Survey!</h1>
-    <p>Age: </p><input class="age" type="text" >
-    <p>Gender: </p><select class="gender">
-            <option value="male">Male</option>
-            <option value="female" selected>Female</option>
-          </select>
-    <p>Phone Number: </p><input class="phone" type="text" >
-    <p>Profile Photo: </p><input class="photoUrl" type="text" ><br>
-    --
-    <p>Do you smoke? <input class="smoker" type="checkbox" ></p>
-    <p>Do you drink alcohol? <input class="alco" type="checkbox" ></p>
-    <p>Do you have any pets? <input class="pets" type="checkbox" ></p>
-    <p>What is your proffession? </p><input class="proffession" type="text" >
-    <p>Where would you like to live? </p><input class="wanted-location" type="text" >
-    <p>Are you a vegetarian? </p>
-    <select class="veggie">
-            <option value="carnivore" selected>Carnivore</option>
-            <option value="vegetarian">Vegetarian</option>
-            <option value="vegan">Vegan</option>
-          </select>
-    <p>Religion? </p><select class="religion">
-            <option value="secular" selected>Secular</option>
-            <option value="traditional">Traditional</option>
-            <option value="religious">Religious</option>
-          </select>
-    <p>How would you rate the importance of hygiene to you? (1-Low, 5-High) </p><input type="number" class="hygiene" min="1" max="5">
-    <p>What are some of your hobbies? </p><input class="hobbies" type="text" >
-    <p>Do you like to host people at your house? <input class="host" type="checkbox" ></p>
-    <p>Would you prefer to share groceries with your roomate? </p><input class="grocery" type="checkbox" >
-    <p>How would you rate the importance of quietness to you? (1-Low, 5-High) </p><input class="quiet" type="number" min="1" max="5" >
-    <p>How would you rate your ability to handle finances? (1-Low, 5-High) </p><input class="finance" type="number" min="1" max="5" >
-    <p>What is the most you'd like to spend on rent? </p><input class="max-rent" type="text" >
-    <p>Which household chores are you usually OK with doing? </p>
-    <select class="chores" size="4" multiple>
-            <option value="dishes">Washing dishes</option>
-            <option value="cooking">Cooking</option>
-            <option value="laundry">Laundry</option>
-            <option value="cleaning">Cleaning</option>
-    </select>
-    <p>How many roomates would you like to have? </p><input class="num-roomates" type="text" >
-    <p>For how long would you like to have roomates? </p><input class="time-roomates" type="text" >
-    <p>Do you have any allergies? </p><input class="allergy" type="text" >
-    <p>What are some of your favorite TV shows? </p><input class="tv" type="text" >
-    <p>Where do you like to hang out on your free time? </p><input class="hang" type="text" >
-    <p>What are your favorite bands/singers/music genres? </p><input class="music" type="text" >
-    <p>What else would you like us to know about you? </p><input class="about" type="text" ><br>
-   
-            <button type="button" class="btn btn-sm add-user">Save</button>
-  </div>
-</form>
-<script src="jquery/dist/jquery.js"></script>
-<script src="handlebars/dist/handlebars.js"></script>
-<script src="main.js" type="module"></script>
+        <div class="nav-container"></div>
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="board">
+                    <div class="board-inner">
+                        <ul class="nav nav-tabs" id="myTab" role="tablist">
+                            <div class="liner"></div>
+                            <li class="nav-item" class="">
+                                <a class="nav-link active" href="#step1" data-toggle="tab" title="step1" role="tab" aria-controls="step1" aria-selected="true">
+                                    <p class="round-tabs one">
+                                        <span>1</span>
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item disabled">
+                                <a class="nav-link" href="#step2" data-toggle="tab" title="step2" role="tab" aria-controls="step2">
+                                    <p class="round-tabs two">
+                                        <span>2</span>
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item disabled">
+                                <a class="nav-link" href="#step3" data-toggle="tab" title="step3" role="tab" aria-controls="step3" aria-selected="false">
+                                    <p class="round-tabs three">
+                                        <span>3</span>
+                                    </p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item disabled">
+                                <a class="nav-link" href="#step4" data-toggle="tab" title="step4" role="tab" aria-controls="step4" aria-selected="false">
+                                    <p class="round-tabs four">
+                                        <span>4</span>
+                                    </p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item disabled">
+                                <a class="nav-link" href="#step5" data-toggle="tab" title="step5" role="tab" aria-controls="step5" aria-selected="false">
+                                    <p class="round-tabs five">
+                                        <span>5</span>
+                                    </p>
+                                </a>
+                            </li>
+
+                            <li class="nav-item disabled">
+                                <a class="nav-link" href="#step6" data-toggle="tab" title="step6" role="tab" aria-controls="step6" aria-selected="false">
+                                    <p class="round-tabs five">
+                                        <span>6</span>
+                                    </p>
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+
+                    <div class="tab-content sign-up2">
+                        <div class="tab-pane fade show active" id="step1" role="tabpanel" aria-labelledby="step1-tab">
+                            <h5 class="head text-center">
+                                Account
+                            </h5>
+                            <div class="row">
+                                <form class="col s12">
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <i class="material-icons prefix">account_circle</i>
+                                            <input id="Full_name" type="text" class="validate name">
+                                            <label for="Full_name">Full Name</label>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <i class="material-icons prefix">lock</i>
+                                            <input id="password" type="password" class="validate pass">
+                                            <label for="password">Password</label>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <i class="material-icons prefix">email</i>
+                                            <input id="email" type="email" class="validate email">
+                                            <label for="email">Email</label>
+                                            <span class="helper-text" data-error="wrong" data-success="right"></span>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="input-field col s12">
+                                            <i class="material-icons prefix">phone</i>
+                                            <input id="phone" type="number" class="validate  phone">
+                                            <label for="phone">Phone</label>
+                                            <span class="helper-text" data-error="wrong" data-success="right"></span>
+                                        </div>
+                                    </div>
+                                    <button type="button" class="btn btn-primary next-step">Next</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="step2" role="tabpanel" aria-labelledby="step2-tab">
+                            <h5 class="head text-center">detalies</h5>
+                            <form action="#" class="">
+                                <div>
+                                    <label>
+                                        <input class="with-gap gender" name="gender" type="radio" value="male" checked />
+                                        <span>Male</span>
+                                    </label>
+                                    <label>
+                                        <input class="with-gap gender" name="gender" type="radio" value="female" />
+                                        <span>Female</span>
+                                    </label>
+                                </div>
+                                <div>
+                                    <div class="input-field">
+                                        <input id="age" type="number" class="validate age" style="width: 40%;">
+                                        <label for="age">age</label>
+                                    </div>
+                                </div>
+                                <div class="input-field">
+                                    <input type="text" id="proffession" class="validate proffession" style="width: 40%;">
+                                    <label for="proffession">What is your proffession? </label>
+                                </div>
+                                <div class="input-field">
+                                    <input class="photoUrl validate" id="photoUrl" type="url" style="width: 40%;">
+                                    <label for="photoUrl">Profile Photo</label>
+                                </div>
+                                <div>
+                                    <button type="button" class="btn btn-default prev-step">Previous</button>
+                                    <button type="button" class="btn btn-primary next-step">Next</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="tab-pane fade" id="step3" role="tabpanel" aria-labelledby="step3-tab">
+                            <h5>Roomie Info</h5>
+                            <form action="#" class="">
+                                <div>
+                                    <div class="input-field">
+                                        <input id="wanted-location" type="text" class="validate wanted-location" style="width: 40%;">
+                                        <label for="wanted-location">Where would you like to live?</label>
+                                    </div>
+                                </div>
+                                <div class="input-field">
+                                    <input type="number" id="max-rent" class="validate max-rent" style="width: 40%;">
+                                    <label for="max-rent">What is the most you'd like to spend on rent? ($)</label>
+                                </div>
+                                <div class="input-field">
+                                    <input class="num-roomates validate" id="num-roomates" type="number" style="width: 40%;">
+                                    <label for="num-roomates">How many roomates would you like to have? </label>
+                                </div>
+                                <div class="input-field">
+                                    <input class="time-roomates validate" id="time-roomates" type="number" style="width: 40%;">
+                                    <label for="time-roomates">For how long would you like to have roomates? (months)</label>
+                                </div>
+                                <div>
+                                    <button type="button" class="btn btn-default prev-step">Previous</button>
+                                    <button type="button" class="btn btn-primary next-step">Next</button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="tab-pane fade" id="step4" role="tabpanel" aria-labelledby="step4-tab">
+                            <h5>Nice to know..</h5>
+                            <form action="#" class="">
+                                <p>
+                                    <label>
+                                        <input class="smoker" type="checkbox" />
+                                        <span>Do you smoke?</span>
+                                    </label>
+                                </p>
+                                <p>
+                                    <label>
+                                        <input class="alco" type="checkbox" />
+                                        <span>Do you drink alcohol?</span>
+                                    </label>
+                                </p>
+                                <p>
+                                    <label>
+                                        <input class="pets" type="checkbox">
+                                        <span>Do you have any pets</span>
+                                    </label>
+                                </p>
+                                <div class="input-field col s12">
+                                    <select class="veggie">
+                                        <option value="" disabled selected>Choose your option</option>
+                                        <option value="carnivore">Carnivore</option>
+                                        <option value="vegetarian">Vegetarian</option>
+                                        <option value="vegan">Vegan</option>
+                                    </select>
+                                    <label>Are you a vegetarian?</label>
+                                </div>
+                                <div class="input-field col s12">
+                                    <select class="religion">
+                                        <option value="" disabled selected>Choose your option</option>
+                                        <option value="secular">Secular</option>
+                                        <option value="traditional">Traditional</option>
+                                        <option value="religious">Religious</option>
+                                    </select>
+                                    <label>Religion?</label>
+                                </div>
+                                <div>
+                                    <div class="input-field col s12">
+                                        <input id="allergy" type="text" class="validate allergy">
+                                        <label for="allergy">Do you have any allergies?</label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button type="button" class="btn btn-default prev-step">Previous</button>
+                                    <button type="button" class="btn btn-primary next-step">Next</button>
+                                </div>
+                            </form>
+
+                        </div>
+                        <div class="tab-pane fade" id="step5" role="tabpanel" aria-labelledby="step5-tab">
+                            <h5>which Roomie are you?</h5>
+                            <form action="#" class="">
+                                <div>
+                                    <label> How would you rate the importance of hygiene to you? (1-Low, 5-High) </label>
+                                    <p class="range-field">
+                                        <input type="range" class="hygiene" value="3" min="1" max="5" style="width:25%" />
+                                    </p>
+                                </div>
+                                <div>
+                                    <label>How would you rate the importance of quietness to you? (1-Low, 5-High) </label>
+                                    <p class="range-field">
+                                        <input class="quiet" type="range" value="3" min="1" max="5" style="width:25%">
+                                    </p>
+                                </div>
+                                <div>
+                                    <label>How would you rate your ability to handle finances? (1-Low, 5-High) </label>
+                                    <p class="range-field">
+                                        <input class="finance" type="range" value="3" min="1" max="5" style="width:25%">
+                                    </p>
+                                </div>
+                                <p>
+                                    <label>
+                                        <input class="host" type="checkbox" />
+                                        <span>Do you like to host people at your house?</span>
+                                    </label>
+                                </p>
+                                <p>
+                                    <label>
+                                        <input class="grocery" type="checkbox" />
+                                        <span>Would you prefer to share groceries with your roomate? </span>
+                                    </label>
+                                </p>
+                                <div class="input-field col s12">
+                                    <select class="chores" size="4" multiple>
+                                        <option value="" disabled selected>Choose your option</option>
+                                        <option value="dishes">Washing dishes</option>
+                                        <option value="cooking">Cooking</option>
+                                        <option value="laundry">Laundry</option>
+                                        <option value="cleaning">Cleaning</option>
+                                    </select>
+                                    <label>Which household chores are you usually OK with doing?</label>
+                                </div>
+                                <div>
+                                    <button type="button" class="btn btn-default prev-step">Previous</button>
+                                    <button type="button" class="btn btn-primary next-step">Next</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane fade" id="step6" role="tabpanel" aria-labelledby="step6-tab">
+                            <h5>More about you?</h5>
+                            <form action="#" class="">
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                        <i class="material-icons prefix">mode_edit</i>
+                                        <textarea id="hobbies" class="materialize-textarea hobbies"></textarea>
+                                        <label for="hobbies">What are some of your hobbies?</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                        <i class="material-icons prefix">mode_edit</i>
+                                        <textarea id="tv" class="materialize-textarea tv"></textarea>
+                                        <label for="tv">What are some of your favorite TV shows?</label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                        <i class="material-icons prefix">mode_edit</i>
+                                        <textarea id="hang" class="materialize-textarea hang"></textarea>
+                                        <label for="hang">Where do you like to hang out on your free time? </label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                        <i class="material-icons prefix">mode_edit</i>
+                                        <textarea id="music" class="materialize-textarea music"></textarea>
+                                        <label for="music">What are your favorite bands/singers/music genres? </label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="input-field col s6">
+                                        <i class="material-icons prefix">mode_edit</i>
+                                        <textarea id="about" class="materialize-textarea about"></textarea>
+                                        <label for="about">What else would you like us to know about you? </label>
+                                    </div>
+                                </div>
+                                <div>
+                                    <button type="button" class="btn btn-default prev-step">Previous</button>
+                                    <button type="button" class="btn btn-sm add-user">Sumbit</button>
+
+                                </div>
+                            </form>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <script type="text/javascript" src="jquery/dist/jquery.js"></script>
+    <script type="text/javascript " src="materialize-css\dist\js\materialize.min.js "></script>
+    <script type="text/javascript" src="bootstrap\dist\js\bootstrap.min.js "></script>
+    <script type="text/javascript" src="bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="handlebars/dist/handlebars.js"></script>
+    <script src="main.js" type="module"></script>
 </body>
 
 </html>

@@ -2,48 +2,94 @@
 <html>
 
 <head>
-    <!-- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous"> 
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">  -->
-  <!-- <link type="text/css" rel="stylesheet" href="materialize-css\dist\css\materialize.min.css" media="screen,projection" /> -->
-  <link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
-  <title>Search</title>
 </head>
 
-<body>
-  <h1>Search</h1>
-  <div id="search">
-    <input type="number" class="maxage" placeholder="Max age" id="maxage-input">
-    <input type="number" class="minage" placeholder="Min age" id="minage-input">
-    <input type="string" class="wantedLocation" placeholder="Wanted Location" id="wantedLocation-input">
-    <input type="number" class="maxrent" placeholder="Max rent" id="maxrent-input">
-    <input type="number" class="maxnumroomates" placeholder="Max number of roomates" id="maxnumroomates-input">
 
-    
-<!-- 
-      <input list="gender-list" class="gender" placeholder="gender">
+<link rel="stylesheet" href="font-awesome\css\font-awesome.css">
+<link rel="stylesheet" href="w3css-master\w3.css">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
+  crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link type="text/css" rel="stylesheet" href="materialize-css\dist\css\materialize.min.css" media="screen,projection" />
+<link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+<link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+<title>Search</title>
+
+
+<body>
+  <div class="container">
+    <div class="nav-container"></div>
+    <div class="serch-option-container col s12">
+      <div class="row">
+        <div class="col s2">
+          <div class="row">
+            <div class="input-field col s1">
+              <input id="maxage-input" type="number" class="maxage" >
+              <label for="maxage-input">Max age</label>
+            </div>
+            <div class="input-field col s1">
+              <input id="minage-input" type="number" class="minage">
+              <label for="minage-input">Min age</label>
+            </div>
+          </div>
+        </div>
+        <div class="input-field col s3">
+          <input id="wantedLocation-input" type="text" class="wantedLocation">
+          <label for="wantedLocation-input">Wanted Location</label>
+        </div>
+        <div class="input-field col s4">
+            <input id="maxnumroomates-input" type="number" class="maxnumroomates">
+            <label for="maxnumroomates">number of roomates</label>
+          </div>
+        <div class="input-field col s1">
+          <input id="maxrent-input" type="number" class="maxrent">
+          <label for="maxrent-input">Max rent</label>
+        </div> 
+        <div  class=" input-field col s1">
+          <label>
+            <input class="form-radio filled-in pets" name="pets" type="checkbox" id="pets-checkbox" />
+            <span>Pets</span>
+          </label>
+        </div>
+        <div  class="input-field col s1">
+          <button class="btn waves-effect waves-light btn-small findBtn" type="button" name="action">Find Roomies
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="serch-result-container">
+      <div class="w3-content roomiecard ">
+        <div class="results ">
+        </div>
+      </div>
+      <div class="arrow-container">
+        <button class="w3-button w3-black w3-display-left arrow" onclick="plusDivs(-1)">&#10094;</button>
+        <button class="w3-button w3-black w3-display-right arrow" onclick="plusDivs(1)">&#10095;</button>
+      </div>
+    </div>
+  </div>
+  <!-- <input list="gender-list" class="gender" placeholder="gender">
     <datalist id="gender-list">
       <option value="Female">
         <option value="Male">
-    </datalist> -->
+    </datalist>  -->
 
-      <!-- <input class="form-radio" type="checkbox" name="smoker" id="smoker-checkbox">
+  <!-- <input class="form-radio" type="checkbox" name="smoker" id="smoker-checkbox">
       <label for="smoker">Smoker</label>
 
       <input class="form-radio" type="checkbox" name="alcohol" id="alcohol-checkbox">
       <label for="alcohol">Alcohol</label> -->
 
-      <input class="form-radio pets" type="checkbox" name="pets" id="pets-checkbox">
-      <label for="pets">Pets</label>
 
-      <!-- <input class="form-radio" type="checkbox" name="host" id="host-checkbox">
+
+  <!-- <input class="form-radio" type="checkbox" name="host" id="host-checkbox">
       <label for="host">Host</label>
 
       <input class="form-radio" type="checkbox" name="joinedGrocery" id="joinedGrocery-checkbox">
       <label for="joinedGrocery">Joined Grocery</label>
     </div> -->
 
-    <!-- <input list="diets-list" name="diet" placeholder="Diet">
+  <!-- <input list="diets-list" name="diet" placeholder="Diet">
     <datalist id="diets-list">
       <option value="Vegan">
         <option value="Nothing special">
@@ -57,7 +103,7 @@
           <option value="secular">
     </datalist> -->
 
-    <!-- <input list="hygenicRatings-list" name="hygenicRating" placeholder="Hygenic Rating">
+  <!-- <input list="hygenicRatings-list" name="hygenicRating" placeholder="Hygenic Rating">
     <datalist id="hygenicRatings-list">
       <option value=1>
         <option value=2>
@@ -78,84 +124,69 @@
           <option value=3>
     </datalist> -->
 
-    <button type="button" class="btn btn-secondary findBtn ">Find Roomies</button>
-  </div>
-
-
-  <h2>My Matches</h2>
-  <div id="container">
-  <button type="button" class="checkB" ><img src="https://cdn3.iconfinder.com/data/icons/simple-web-navigation/165/tick-512.png" height="38" width="38"></button> 
-  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-      <div class="results">
-      </div>
-
-      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon prev" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-
-      <a class="carousel-control-next " href="#carouselExampleControls" role="button" data-slide="next">
-        <span class="carousel-control-next-icon next" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
-  </div>
-</div>
-
 
 
   <script id="users-template" type="text/x-handlebars-template">
     {{#each users}}
-       <div  data-id="{{_id}}" class="carousel-item active roomate">
-         <form>
-        <div class="choices">
-             <!-- <button type="button" class="checkB" ><img src="https://cdn3.iconfinder.com/data/icons/simple-web-navigation/165/tick-512.png" height="38" width="38"></button>  -->
-              <!-- <img class="crossB" src="https://cdn3.iconfinder.com/data/icons/simple-web-navigation/165/cross-512.png" height="38" width="38"> -->
+       <div data-id="{{_id}}" class="roomate mySlides w3-container w3-card w3-round w3-white w3-center"  >
+          <div class="w3-container"> 
+            <img src="{{photo}}" alt="Avatar" style="width:20%">
+            <br>
+            <span>{{fullName}}</span>
+            <p class="title ">About Me</p>
+            <p>Hi! I'm {{age}} years old, looking for houses in {{wantedLocation}}. I'm a {{proffession}}, and i like to {{hobbies}}.
+              I love listening to {{music}}. The most I'd spend on rent is ${{maxrent}}. Some more info about me- {{aboutMe}}</p>
+            <p>email: {{email}} | phone: {{phone}}</p> 
+            <div class="checkboxes ">
+                {{#if pets}}
+                  <img src="images/pet-yes.png ">
+                {{/if}}
+                {{#if smoker}}
+                  <img src="images/smoker.png ">
+                {{/if}}
+                {{#if host}}
+                   <img src="images/host-yes.png ">
+                {{/if}}             
             </div>
-          </form> 
-       <div class="row">
-         <div class="column">
-          <div class= " activator card">
-          <span class="activator grey-text text-darken-4"><i class="material-icons right">more_vert</i></span>
-            <img  src="{{photo}}">
-                  <div class="container">
-                     <h2>{{fullName}}</h2>
-                     <p class="title">About Me</p>
-                      <p>Hi! I'm {{age}} years old, looking for houses in {{wantedLocation}}. I'm a {{proffession}}, and i like to {{hobbies}}.
-                          I love listening to {{music}}. The most I'd spend on rent is ${{maxrent}}. Some more info about me- {{aboutMe}}</p>
-                      <p>email: {{email}} | phone: {{phone}}</p> -->
-                     <div class="checkboxes">
-                     {{#if pets}}
-                     <img src="images/pet-yes.png">
-                     {{/if}}
-                     {{#if smoker}}
-                     <img src="images/smoker.png">
-                     {{/if}}
-                     {{#if host}}
-                     <img src="images/host-yes.png">
-                     {{/if}}             
-                   </div>
-                  </div>
-                  <!-- <div class="card-reveal">
-                      <i class="material-icons right">close</i></span>
-                       
-                  </div> -->
+            <div class="w3-row w3-opacity">
+             <div class="w3-half">
+              <button type="button"   class=" checkB w3-button w3-block w3-green w3-section" title="Accept">
+                <i class="fa fa-check"></i>
+              </button>
+             </div>
+             <div class="w3-half">
+              <button class=" crossB w3-button w3-block w3-red w3-section" title="Decline">
+                <i class="fa fa-remove"></i>
+              </button>
+              </div>
+            </div>   
           </div>
-        </div>
-       </div>
-        </div>
-    {{/each}}
+        </div>               
+     {{/each}}
+   
+  
   </script>
+  <script>
+      let slideIndex = 1;
+      function plusDivs(n) {
+        showDivs(slideIndex += n);
+      }
 
-
-  
-
-  
-  <script src="jquery/dist/jquery.js"></script>
-  <script src="handlebars/dist/handlebars.js"></script>
- <!-- <script type="text/javascript" src="materialize-css\dist\js\materialize.min.js"></script>  -->
-  <script type="text/javascript" src="bootstrap\dist\js\bootstrap.js"></script>
+      function showDivs(n) {
+        let i;
+        let x = $(".mySlides");
+        if (n > x.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = x.length }
+        for (i = 0; i < x.length; i++) {
+          x[i].style.display = "none";
+        }
+        x[slideIndex - 1].style.display = "block";
+      }
+  </script>
+  <script src="jquery/dist/jquery.js "></script>
+  <script src="handlebars/dist/handlebars.js "></script>
+  <script type="text/javascript " src="materialize-css\dist\js\materialize.min.js "></script>
+  <script type="text/javascript " src="bootstrap\dist\js\bootstrap.js "></script>
   <script src="main.js" type="module"></script>
 </body>
 
