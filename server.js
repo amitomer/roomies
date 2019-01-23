@@ -6,9 +6,7 @@ let User = require('./models/usersModel');
 const SERVER_PORT = 8080;
 
 
-mongoose.connect(process.env.CONNECTION_STRING||'mongodb://localhost/roomiesDB', function () {
-  console.log("DB connection established!!!");
-})
+mongoose.connect(process.env.CONNECTION_STRING||'mongodb://localhost/roomiesDB')
 
 var app = express();
 app.use(express.static('public'));
@@ -257,9 +255,7 @@ app.post('/users/:UserId/matches/:PartnerId', function (req, res) {
 
 
 
-app.listen(process.env.PORT || SERVER_PORT, () => {
-  console.log("Server started on port " + SERVER_PORT);
-});
+app.listen(process.env.PORT || SERVER_PORT)
 
 // app.post('/users/:UserId/matches', function (req, res) {
 //   const userId = req.params.UserId;
