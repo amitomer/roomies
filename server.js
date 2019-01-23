@@ -5,7 +5,8 @@ var mongoose = require('mongoose');
 let User = require('./models/usersModel');
 const SERVER_PORT = 8080;
 
-mongoose.connect('mongodb://localhost/roomiesDB', function () {
+
+mongoose.connect(process.env.CONNECTION_STRING||'mongodb://localhost/roomiesDB', function () {
   console.log("DB connection established!!!");
 })
 
@@ -256,7 +257,7 @@ app.post('/users/:UserId/matches/:PartnerId', function (req, res) {
 
 
 
-app.listen(SERVER_PORT, () => {
+app.listen(process.env.PORT || SERVER_PORT, () => {
   console.log("Server started on port " + SERVER_PORT);
 });
 
