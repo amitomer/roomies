@@ -5,10 +5,10 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
     <link type="text/css" rel="stylesheet" href="materialize-css\dist\css\materialize.min.css" media="screen,projection" />
-    <link rel="stylesheet" type="text/css" href="bootstrap/dist/css/bootstrap.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" media="screen" href="style.css">
 
     <!-- <script>
@@ -27,7 +27,7 @@
                 <i class="material-icons">menu</i>
             </a>
         </div>
-        <div class="matchesRes"> you dont have any</div>
+        <div class="matchesRes"> </div>
         <ul id="slide-out" class="sidenav">
             <li>
                 <div class="user-view">
@@ -59,10 +59,18 @@
                 <a class="waves-effect sidenav-close offers-match" href="#">offers</a>
             </li>
         </ul>
-            
+
     </div>
 
 
+
+    <script id="message-template" type="text/x-handlebars-template">
+        <div class="matches-message">
+            <p>you dont have any {{type}} yet!</p>
+            <p>go and search for new Roomies opportunities </p>
+            <a  class="btn waves-effect waves-light btn-small" href="search.html">go</a>
+        </div>          
+   </script>
 
     <script id="offers-template" type="text/x-handlebars-template">
             {{#each matches}}

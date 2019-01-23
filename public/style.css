@@ -9,27 +9,28 @@ body{
     font-family: "Roboto", sans-serif;
     font-weight: normal;  
   }
+
+.login-container{
+    position: absolute;
+    top: 20%;
+    left:30%
+}
+ 
   .accountimage{
-margin: 0 auto;
-margin-top: 5%
+    margin-left: 45%
   }
-  #loginform{
-    margin: 0 auto;
-      position: absolute;
-      left: 17%;
-      top:30%
+
+  .loginform{
+    margin-top: 5%
   }
   button.signin{
-      margin-left: 10%
+      margin-left: 17%
   }
 html{
     font-family: "Roboto", sans-serif;
     font-weight: normal;
 }
-.loginform{
-    position: absolute;
-    top: 30%;
-}
+
 .nav{
      z-index: 10; 
      position: fixed; 
@@ -101,15 +102,20 @@ html{
     width: 70%;
     height: auto;
 }
+.matches-message{
+    font-size: 20px;
+    font-weight: bold;
+   margin-top: 13%;
+   margin-left: 17%
+}
 .match{
     width: 95%;
-    height: 15%;
-    
+    height: 15%;   
 }
 
 .sidenav-trigger-container{
     position: absolute;
-   top: 10%
+    top: 10%
 }
 .roomiecard{
 width: 80%

@@ -30,7 +30,7 @@ let userSchema = new Schema({
     quietRating: Number,
     financesRating: Number,
     maxrent: Number,
-    chores:Array,
+    chores:Array ,
     maxnumroomates:Number, //number of roomates, how long 
     roomatetime:Number,
     allergies:String,

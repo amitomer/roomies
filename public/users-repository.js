@@ -9,7 +9,7 @@ class UsersRepository {
     }
 
     getFromLocalStorage() {
-        let data=JSON.parse(localStorage.getItem(this.STORAGE_ID) ||null);
+        let data=JSON.parse(localStorage.getItem(this.STORAGE_ID) || null);
         return  data;
     }
     ClearLocal(){
@@ -91,14 +91,12 @@ class UsersRepository {
         try {
             let user = await $.get(`/users/${password}/${fullname}`)
             if(user[0]!= undefined){
-                console.log(user)
-            this.saveToLocalStorage(user);
+            this.saveToLocalStorage(user[0]);
             return true;
             }
             return false;
         }
         catch (error) {
-            console.log(error);
             return false;
         }
     }
@@ -106,9 +104,11 @@ class UsersRepository {
     async getUsers() {
         try {
             let UserData = this.getFromLocalStorage();
-            let id = UserData[0]._id;
+            if(UserData){
+            let id = UserData._id;
             let data = await $.get(`/users/${id}`)
             this.users = data;
+            }
         }
         catch (error) {
             throw error;
@@ -117,7 +117,8 @@ class UsersRepository {
 
     async addUser(roomatetime,name, password, age, gender, phone, email, smoker, alcohol, pets, proffession, wantedLocation, diet, religion, hygenicRating, hobbies, host, joinedGrocery, quietRating, financesRating, maxrent, chores, maxnumroomates, allergies, photo, aboutMe, tvShows, hangout, music) {
         try {
-            let newuser = await $.post('/users', { fullName: name, password: password, age: age, gender: gender, phone: phone, email: email, smoker: smoker, alcohol: alcohol, pets: pets, proffession: proffession, wantedLocation: wantedLocation, diet: diet, religion: religion, hygenicRating: hygenicRating, hobbies: hobbies, host: host, joinedGrocery: joinedGrocery, quietRating: quietRating, financesRating: financesRating, maxrent: maxrent, chores: chores, maxnumroomates: maxnumroomates,roomatetime:roomatetime, allergies: allergies, photo: photo, aboutMe: aboutMe, tvShows: tvShows, hangout: hangout, music: music, matches:[] })
+            let newuser = await $.post('/users', { fullName: name, password: password, age: age, gender: gender, phone: phone, email: email, smoker: smoker, alcohol: alcohol, pets: pets, proffession: proffession, wantedLocation: wantedLocation, diet: diet, religion: religion, hygenicRating: hygenicRating, hobbies: hobbies, host: host, joinedGrocery: joinedGrocery, quietRating: quietRating, financesRating: financesRating, maxrent: maxrent, chores:chores, maxnumroomates: maxnumroomates,roomatetime:roomatetime, allergies: allergies, photo: photo, aboutMe: aboutMe, tvShows: tvShows, hangout: hangout, music: music, matches:[] })
+           console.log(newuser.chores)
             this.users.push(newuser);
         } catch (error) {
             throw error;

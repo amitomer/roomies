@@ -95,6 +95,13 @@ app.get('/Users/:UserId/matches/propses', function (req, res) {
       }
     }
   ], function (err, user) {
+    if(err){
+      res.status(500).send(err)
+    }
+    if(user[0].matches.length == 0){
+      res.status(200).send(user[0].matches)
+    }
+    else {
     User.populate(user, { path: "matches.offerer" },
       function (err, users) {
         if (err) {
@@ -107,6 +114,7 @@ app.get('/Users/:UserId/matches/propses', function (req, res) {
         }
       }
     )
+  }
   })
 
 });
@@ -214,7 +222,6 @@ app.get('/users/:password/:fullname', function (req, res) {
 
 app.post('/users', function (req, res) {
   let NewUser = new User(req.body)
-  console.log(NewUser);
   NewUser.save(function (err, data) {
     if (err) {
       res.status(400).send(err);
